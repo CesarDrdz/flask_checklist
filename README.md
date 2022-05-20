@@ -505,7 +505,7 @@ def index():
 def register():
     print(request.form)
     if not User.validate_user(request.form):
-        return redirect('/logout')
+        return redirect('/')
     pw_hash = bcrypt.generate_password_hash(request.form['password'])
     print(pw_hash)
     data = {
@@ -516,6 +516,7 @@ def register():
     }
     user_id = User.save(data)
     session['user_id'] = user_id
+    session['user_name'] = request.form['first_name']
     return redirect('/models')
 
 @app.route('/login', methods=['post'])

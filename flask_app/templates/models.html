@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 40aa07b72d21909cbd8e9759fafd65e0d752c674
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS only -->
+<<<<<<< HEAD
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>models</title>
@@ -37,6 +41,39 @@
                     <td>{{ model.column1 }}</td>
                     <td>{{ model.column2 }}</td>
                     <td>{{ model.column3}}</td>
+=======
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>models</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome {{session['user_name']}}</h1>
+        <div class="row"></div>
+            <div class="float-end mt-3 mb-3">
+                <a class="btn btn-danger" href="/logout">logout</a>
+                <a class="btn btn-secondary" href="/models">home</a>
+            </div>
+
+            <h1 class="text-center">Here are our models!!!</h1>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Column One</th>
+                        <th>Column Two</th>
+                        <th>Column Three</th>
+                        <th>Added By</th>
+                        <th>Created At</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for model in models %}
+                    <tr>
+                        <td>{{ model.column1 }}</td>
+                        <td>{{ model.column2 }}</td>
+                        <td>{{ model.column3}}</td>
+                        <td>{{ model.user}}</td>
+>>>>>>> 40aa07b72d21909cbd8e9759fafd65e0d752c674
                     <td>{{ model.created_at.strftime("%b %d %Y") }}</td>
                     <td>
                         <a href="/model/show/{{ model.id }}">Show</a> |
@@ -48,8 +85,15 @@
             </tbody>
         </table>
         <a href="/model/new" class="btn btn-primary">Add a model</a>
+<<<<<<< HEAD
     </div>
 
 </body>
 
+=======
+        <a href="/user/show/{{session['user_id']}}" class="btn btn-primary">view your models</a>
+    </div>
+
+</body>
+>>>>>>> 40aa07b72d21909cbd8e9759fafd65e0d752c674
 </html>

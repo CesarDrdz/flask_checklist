@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 from flask import render_template, request, redirect, session
+=======
+from flask import render_template, request, redirect
+>>>>>>> 40aa07b72d21909cbd8e9759fafd65e0d752c674
 from flask_app import app
 from flask_app.models.model import Model
 
@@ -19,10 +23,14 @@ def create_model():
 # TODO READ ALL
 @app.route('/models')
 def models():
+<<<<<<< HEAD
     if 'user_id' not in session:
         return redirect ('/logout')
         
     return render_template("models.html",models=Model.get_all())
+=======
+    return render_template("models.html",models=Model.get_all_with_user())
+>>>>>>> 40aa07b72d21909cbd8e9759fafd65e0d752c674
 
 # TODO READ ONE
 @app.route('/model/show/<int:id>')
